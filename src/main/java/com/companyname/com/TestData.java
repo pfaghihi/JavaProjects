@@ -1,5 +1,7 @@
 package com.companyname.com;
 
+import java.util.Random;
+
 public class TestData {
 
     // Open file to write
@@ -13,14 +15,21 @@ public class TestData {
     public String generateData(String data, int numOfRecords){
             StringBuilder line = new StringBuilder();
             for (int i =0; i <= numOfRecords; i++) {
-                line.append(data + ",");
+                String dataGen = randomUser(data);
+                line.append(dataGen + ",");
             }
             return line.toString();
 
     }
 
     // Random User
-    public String randomUser(data){
+    public String randomUser(String data){
+
+        Random rand = new Random();
+        int randomNum = rand.nextInt(10);
+        System.out.println(data + randomNum);
+        return (data + randomNum);
+
 
     }
 
